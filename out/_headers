@@ -1,0 +1,15 @@
+# Netlify headers (copied into out/ by the build)
+
+# Hashed JS/CSS bundles never change under the same name.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Clara's model is not content-hashed; cache for a day.
+/models/*
+  Content-Type: model/gltf-binary
+  Cache-Control: public, max-age=86400
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: microphone=(self), camera=(), geolocation=()
